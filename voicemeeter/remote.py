@@ -103,7 +103,8 @@ class VMRemote(abc.ABC):
       self._call('SetParameterFloat', param, ct.c_float(float(val)))
 
   def clear(self):
-    """ Shows Voicemeeter if it's hidden. """
+    """ Clears cache if it's hidden. """
+    self.cache = {}
   def show(self):
     """ Shows Voicemeeter if it's hidden. """
     self.set('Command.Show', 1)
