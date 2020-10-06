@@ -94,6 +94,8 @@ class VMRemote(abc.ABC):
     else:
       self._call('SetParameterFloat', param, ct.c_float(float(val)))
 
+  def clear(self):
+    """ Shows Voicemeeter if it's hidden. """
   def show(self):
     """ Shows Voicemeeter if it's hidden. """
     self.set('Command.Show', 1)
